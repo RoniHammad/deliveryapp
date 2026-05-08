@@ -4,7 +4,7 @@ import DeliveryAssignment from "../Models/DeliveryAssignment.mjs";
 import { errorController } from "./ErrorController.mjs";
 import { HTTP_STATUS, UserRoles, OrderStatus } from "../Utils/constants.mjs";
 import { parseBody } from "../Utils/bodyParser.mjs";
-import { issueToken, verifyToken, revokeToken } from "../Utils/token.mjs";
+import { issueToken, verifyToken } from "../Utils/token.mjs";
 import { renderHTML } from "../Utils/renderHTML.mjs";
 import RestaurantRepository from "../Database/RestaurantRepository.mjs";
 import OrderRepository from "../Database/OrderRepository.mjs";
@@ -46,8 +46,7 @@ export const restaurantController = {
   },
 
   logout: async (req, res) => {
-    await revokeToken(req);
-    res.setHeader("Set-Cookie", "token=; HttpOnly; Path=/; Max-Age=0");
+    await RestaurantManager.logout(req, res);
     res.writeHead(HTTP_STATUS.TEMP_REDIRECT, { Location: "/login" });
     res.end();
   },

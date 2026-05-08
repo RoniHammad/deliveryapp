@@ -1,5 +1,6 @@
 import mysql from "mysql2/promise"; // mysql2 with Promise support — allows async/await instead of callbacks
-import "dotenv/config"; // loads .env variables into process.env before they are read below
+import Config from "../Utils/Config.mjs";
+import { logger } from "../Utils/Logger.mjs";
 
 const schema = `
 CREATE TABLE IF NOT EXISTS Customer (
@@ -88,30 +89,32 @@ export default class Database {
   }
 
   async #connect() {
+    const config = Config.getInstance();
     this.#pool = mysql.createPool({
-      host: process.env.DB_HOST, // database server address — read from .env
-      port: Number.parseInt(process.env.DB_PORT), // database port — read from .env
-      user: process.env.DB_USER, // database username — read from .env
-      password: process.env.DB_PASSWORD, // database password — read from .env
-      database: process.env.DB_NAME, // database/schema name — read from .env
+      host: config.dbHost, // database server address — read from config
+      port: config.dbPort, // database port — read from config
+      user: config.dbUser, // database username — read from config
+      password: config.dbPassword, // database password — read from config
+      database: config.dbName, // database/schema name — read from config
       waitForConnections: true, // queue requests when all connections are busy
-      connectionLimit: Number.parseInt(process.env.DB_CONNECTION_LIMIT), // max number of simultaneous connections
-      queueLimit: Number.parseInt(process.env.DB_QUEUE_LIMIT), // max number of queued requests (0 = unlimited)
+      connectionLimit: config.dbConnLimit, // max number of simultaneous connections
+      queueLimit: config.dbQueueLimit, // max number of queued requests (0 = unlimited)
       multipleStatements: true,
     });
-    console.log("Connection pool established.");
+    logger.info("Connection pool established.");
     try {
       // This only works if multipleStatements: true is set in the mysql2 config
       await this.#pool.query(schema);
-      console.log("All tables are ready.");
+      logger.info("All tables are ready.");
     } catch (err) {
-      console.error("Runtime Schema Error:", err);
+      logger.error("Runtime Schema Error");
+      logger.error(err);
     }
   }
 
   static getInstance() {
     if (Database.#DBInstance === null) {
-      console.log("Creating a new Database instance");
+      logger.info("Creating a new Database instance");
       Database.#isConstructing = true; // temporarily unlocks the constructor
       Database.#DBInstance = new Database(); // creates the one and only instance
       Database.#isConstructing = false; // locks the constructor again

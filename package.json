@@ -1,22 +1,31 @@
 {
   "name": "deliveryapp",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A food-delivery web application built with **vanilla Node.js** (no Express),\r **MySQL**, and server-side session authentication.  Three types of users —\r customers, restaurant managers, and couriers — interact through a shared order\r lifecycle.",
+  "homepage": "https://github.com/karimfayezaj/DeliveryApp#readme",
+  "bugs": {
+    "url": "https://github.com/karimfayezaj/DeliveryApp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karimfayezaj/DeliveryApp.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:1": "nodemon ./Database/Database.mjs",
     "start:2": "nodemon ./Models/Customer.mjs",
     "start:app": "nodemon ./index.mjs"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "dotenv": "^17.4.2",
-"mysql2": "^3.20.0",
+    "mysql2": "^3.20.0",
     "nodemon": "^3.1.14",
     "uuid": "^13.0.0"
-  }
+  },
+  "devDependencies": {}
 }

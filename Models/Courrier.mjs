@@ -3,6 +3,7 @@ import { v4 } from "uuid"; // generates a unique ID for each new courrier
 import bcrypt from "bcrypt"; // handles password hashing and comparison
 import { SALT_ROUNDS } from "../Utils/constants.mjs"; // shared bcrypt cost factor
 import CourrierRepository from "../Database/CourrierRepository.mjs"; // data access layer for Courrier
+import { revokeToken } from "../Utils/token.mjs";
 
 export default class Courrier extends User {
   constructor(userId, phoneNumber) {
@@ -31,6 +32,11 @@ export default class Courrier extends User {
     if (!checkPassword) throw new Error("Wrong Password"); // hash does not match — reject login
 
     return account; // returns the DB row — contains userId needed for JWT
+  }
+
+  static async logout(req, res) {
+    await revokeToken(req);
+    res.setHeader("Set-Cookie", "token=; HttpOnly; Path=/; Max-Age=0");
   }
 
 }

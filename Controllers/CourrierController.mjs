@@ -2,7 +2,7 @@ import Courrier from "../Models/Courrier.mjs"; // Courrier model — register an
 import { errorController } from "./ErrorController.mjs"; // sends error pages on failure
 import { HTTP_STATUS, UserRoles, OrderStatus } from "../Utils/constants.mjs"; // role, status, and order status constants
 import { parseBody } from "../Utils/bodyParser.mjs"; // reads and decodes the POST request body
-import { issueToken, verifyToken, revokeToken } from "../Utils/token.mjs";
+import { issueToken, verifyToken } from "../Utils/token.mjs";
 import { renderHTML } from "../Utils/renderHTML.mjs"; // renders an HTML template with injected data
 import DeliveryAssignmentRepository from "../Database/DeliveryAssignmentRepository.mjs"; // reads assignments for this courrier
 import DeliveryAssignment from "../Models/DeliveryAssignment.mjs"; // updates assignment status
@@ -37,8 +37,7 @@ export const courrierController = {
   },
 
   logout: async (req, res) => {
-    await revokeToken(req);
-    res.setHeader("Set-Cookie", "token=; HttpOnly; Path=/; Max-Age=0");
+    await Courrier.logout(req, res);
     res.writeHead(HTTP_STATUS.TEMP_REDIRECT, { Location: "/login" });
     res.end();
   },

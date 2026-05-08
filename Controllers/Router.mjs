@@ -2,6 +2,7 @@ import path from "node:path"; // built-in Node.js module for working with file a
 import { fileURLToPath } from "node:url"; // converts an ES module URL (import.meta.url) into a file system path
 import { HTTP_STATUS } from "../Utils/constants.mjs";
 import { errorController } from "./ErrorController.mjs";
+import { logger } from "../Utils/Logger.mjs";
 
 const __dirName = path.dirname(fileURLToPath(import.meta.url)); // resolves the current file's directory (ES module replacement for __dirname)
 
@@ -30,7 +31,7 @@ export class Router {
     try {
       await handler(req, res); // calls the handler — await supports async controllers
     } catch (error) {
-      console.log(error);
+      logger.error(error);
       errorController(HTTP_STATUS.SERVER_ERROR, req, res);
     }
   };

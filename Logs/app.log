@@ -1,0 +1,218 @@
+[2026-05-07T15:25:25.450Z] [INFO] Creating a new Database instance
+[2026-05-07T15:25:25.453Z] [INFO] Connection pool established.
+[2026-05-07T15:25:25.467Z] [INFO] Server running on PORT:3000
+[2026-05-07T15:25:25.470Z] [ERROR] Runtime Schema Error: 
+[2026-05-07T15:34:53.711Z] [INFO] Creating a new Database instance
+[2026-05-07T15:34:53.714Z] [INFO] Connection pool established.
+[2026-05-07T15:34:53.731Z] [INFO] Server running on PORT:3000
+[2026-05-07T15:34:53.735Z] [ERROR] Runtime Schema Error
+[2026-05-07T15:34:53.735Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\deliveryapp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/deliveryapp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/deliveryapp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/deliveryapp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T15:35:40.869Z] [DEBUG] Looking if email exists
+[2026-05-07T15:36:04.007Z] [DEBUG] Looking if email exists
+[2026-05-07T15:40:30.864Z] [INFO] Creating a new Database instance
+[2026-05-07T15:40:30.866Z] [INFO] Connection pool established.
+[2026-05-07T15:40:30.883Z] [INFO] Server running on PORT:3000
+[2026-05-07T15:40:30.885Z] [ERROR] Runtime Schema Error
+[2026-05-07T15:40:30.886Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\deliveryapp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/deliveryapp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/deliveryapp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/deliveryapp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T15:50:46.651Z] [INFO] Creating a new Database instance
+[2026-05-07T15:50:46.654Z] [INFO] Connection pool established.
+[2026-05-07T15:50:46.668Z] [INFO] Server running on PORT:3000
+[2026-05-07T15:50:46.671Z] [ERROR] Runtime Schema Error
+[2026-05-07T15:50:46.671Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\deliveryapp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/deliveryapp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/deliveryapp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/deliveryapp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T15:51:02.870Z] [DEBUG] Looking if email exists
+[2026-05-07T15:51:07.151Z] [DEBUG] Looking if email exists
+[2026-05-07T15:57:08.349Z] [DEBUG] Looking if email exists
+[2026-05-07T16:08:02.969Z] [INFO] Creating a new Database instance
+[2026-05-07T16:08:02.971Z] [INFO] Connection pool established.
+[2026-05-07T16:08:02.984Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:08:02.986Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:08:02.986Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:08:34.072Z] [DEBUG] Looking if email exists
+[2026-05-07T16:12:50.279Z] [DEBUG] Looking if email exists
+[2026-05-07T16:15:21.001Z] [DEBUG] Looking if email exists
+[2026-05-07T16:18:25.156Z] [INFO] Creating a new Database instance
+[2026-05-07T16:18:25.158Z] [INFO] Connection pool established.
+[2026-05-07T16:18:25.170Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:18:25.172Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:18:25.172Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:18:26.756Z] [INFO] Creating a new Database instance
+[2026-05-07T16:18:26.758Z] [INFO] Connection pool established.
+[2026-05-07T16:18:26.770Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:18:26.772Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:18:26.773Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:18:26.939Z] [INFO] Creating a new Database instance
+[2026-05-07T16:18:26.941Z] [INFO] Connection pool established.
+[2026-05-07T16:18:26.954Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:18:26.957Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:18:26.957Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:18:27.139Z] [INFO] Creating a new Database instance
+[2026-05-07T16:18:27.142Z] [INFO] Connection pool established.
+[2026-05-07T16:18:27.154Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:18:27.156Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:18:27.156Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:18:27.317Z] [INFO] Creating a new Database instance
+[2026-05-07T16:18:27.319Z] [INFO] Connection pool established.
+[2026-05-07T16:18:27.331Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:18:27.334Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:18:27.334Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:18:27.554Z] [INFO] Creating a new Database instance
+[2026-05-07T16:18:27.556Z] [INFO] Connection pool established.
+[2026-05-07T16:18:27.567Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:18:27.570Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:18:27.570Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:18:28.039Z] [INFO] Creating a new Database instance
+[2026-05-07T16:18:28.041Z] [INFO] Connection pool established.
+[2026-05-07T16:18:28.052Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:18:28.054Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:18:28.055Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:18:28.505Z] [INFO] Creating a new Database instance
+[2026-05-07T16:18:28.508Z] [INFO] Connection pool established.
+[2026-05-07T16:18:28.519Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:18:28.521Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:18:28.522Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:19:01.875Z] [INFO] Creating a new Database instance
+[2026-05-07T16:19:01.877Z] [INFO] Connection pool established.
+[2026-05-07T16:19:01.890Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:19:01.893Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:19:01.893Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:20:58.317Z] [DEBUG] Looking if email exists
+[2026-05-07T16:21:38.223Z] [DEBUG] Looking if email exists
+[2026-05-07T16:22:11.605Z] [DEBUG] Looking if email exists
+[2026-05-07T16:22:21.507Z] [DEBUG] Looking if email exists
+[2026-05-07T16:24:19.688Z] [DEBUG] Looking if email exists
+[2026-05-07T16:24:47.043Z] [DEBUG] Looking if email exists
+[2026-05-07T16:26:14.024Z] [DEBUG] Looking if email exists
+[2026-05-07T16:26:17.893Z] [DEBUG] Looking if email exists
+[2026-05-07T16:39:40.649Z] [INFO] Creating a new Database instance
+[2026-05-07T16:39:40.652Z] [INFO] Connection pool established.
+[2026-05-07T16:39:40.667Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:39:40.670Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:39:40.670Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-07T16:40:59.054Z] [INFO] Creating a new Database instance
+[2026-05-07T16:40:59.058Z] [INFO] Connection pool established.
+[2026-05-07T16:40:59.073Z] [INFO] Server running on PORT:3000
+[2026-05-07T16:40:59.076Z] [ERROR] Runtime Schema Error
+[2026-05-07T16:40:59.076Z] [ERROR] Error
+    at PromisePool.query (C:\Users\ronih\Desktop\DeliveryApp\node_modules\mysql2\lib\promise\pool.js:36:22)
+    at #connect (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:107:24)
+    at Database.getInstance (file:///C:/Users/ronih/Desktop/DeliveryApp/Database/Database.mjs:121:36)
+    at file:///C:/Users/ronih/Desktop/DeliveryApp/Utils/token.mjs:4:21
+    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:660:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+[2026-05-08T07:23:11.735Z] [INFO] Creating a new Database instance
+[2026-05-08T07:23:11.737Z] [INFO] Connection pool established.
+[2026-05-08T07:23:11.749Z] [INFO] Server running on PORT:3000
+[2026-05-08T07:23:11.935Z] [INFO] All tables are ready.
+[2026-05-08T07:24:18.652Z] [DEBUG] Looking if email exists
+[2026-05-08T07:24:18.669Z] [INFO] Registering a Customer

@@ -2,7 +2,7 @@ import Customer from "../Models/Customer.mjs"; // Customer model — handles reg
 import { errorController } from "./ErrorController.mjs"; // sends error HTML pages on failure
 import { HTTP_STATUS, UserRoles } from "../Utils/constants.mjs"; // role constants — used as JWT payload value
 import { parseBody } from "../Utils/bodyParser.mjs"; // reads and decodes the POST request body
-import { issueToken, revokeToken } from "../Utils/token.mjs";
+import { issueToken } from "../Utils/token.mjs";
 
 export const authController = {
   // handles POST /auth/register — creates a new customer account and logs them in
@@ -32,8 +32,7 @@ export const authController = {
   },
 
   logout: async (req, res) => {
-    await revokeToken(req);
-    res.setHeader("Set-Cookie", "token=; HttpOnly; Path=/; Max-Age=0");
+    await Customer.logout(req, res);
     res.writeHead(HTTP_STATUS.TEMP_REDIRECT, { Location: "/login" });
     res.end();
   },

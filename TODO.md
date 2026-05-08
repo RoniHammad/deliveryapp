@@ -1,12 +1,11 @@
 # DeliveryApp — Student Implementation Guide
 
 This file is your roadmap for the three remaining pieces of infrastructure that
-are **not yet built** in the project.  Read each section carefully before you
-write any code — understanding *why* first will save you a lot of debugging.
+are **now built** in the project.  Read each section carefully to understand what was implemented.
 
 ---
 
-## 1. The `Logger` Class
+## 1. The `Logger` Class ✅ COMPLETED
 
 ### What it is and why you need it
 Right now the codebase is full of `console.log(...)` calls.  That is fine for a
@@ -25,7 +24,7 @@ startup whether to print to the console, write to a file, or both.
 ### Where to put it
 Create the file at `Utils/Logger.mjs`.
 
-### What to implement
+### What was implemented
 
 ```js
 // Utils/Logger.mjs
@@ -41,27 +40,56 @@ const __dirName = path.dirname(fileURLToPath(import.meta.url));
 const LEVELS = { DEBUG: 0, INFO: 1, WARN: 2, ERROR: 3 };
 
 export default class Logger {
-  // TODO: add a #level private field — read it from process.env.LOG_LEVEL
-  //       (default to "INFO" if the env variable is not set).
+  #level;
+  #logFile;
 
-  // TODO: add a #logFile private field — a writable stream opened with
-  //       fs.createWriteStream().  The file should live in ../Logs/app.log
-  //       relative to this file.  Open it with { flags: "a" } so each server
-  //       restart *appends* instead of overwriting.
+  constructor() {
+    this.#level = process.env.LOG_LEVEL?.toUpperCase() || "INFO";
+    if (!LEVELS.hasOwnProperty(this.#level)) {
+      this.#level = "INFO";
+    }
 
-  // TODO: implement a #write(level, message) private method that:
-  //   1. Checks whether LEVELS[level] >= LEVELS[this.#level].
-  //      If not, return early.
-  //   2. Builds a formatted string:
-  //        [2026-05-04T12:00:00.000Z] [INFO]  Something happened
-  //      Use new Date().toISOString() for the timestamp.
-  //   3. Writes the string to the console AND appends it to this.#logFile.
+    const logsDir = path.join(__dirName, "../Logs");
+    fs.mkdirSync(logsDir, { recursive: true });
+    this.#logFile = fs.createWriteStream(path.join(logsDir, "app.log"), {
+      flags: "a",
+      encoding: "utf8",
+    });
+  }
 
-  // TODO: implement four public methods that each call #write with their level:
-  //   debug(message) { this.#write("DEBUG", message); }
-  //   info(message)  { ... }
-  //   warn(message)  { ... }
-  //   error(message) { ... }
+  #shouldLog(level) {
+    return LEVELS[level] >= LEVELS[this.#level];
+  }
+
+  #write(level, message) {
+    if (!this.#shouldLog(level)) return;
+
+    const text = typeof message === "string"
+      ? message
+      : message instanceof Error
+        ? message.stack || message.message
+        : JSON.stringify(message, null, 2);
+
+    const formatted = `[${new Date().toISOString()}] [${level}] ${text}\n`;
+    process.stdout.write(formatted);
+    this.#logFile.write(formatted);
+  }
+
+  debug(message) {
+    this.#write("DEBUG", message);
+  }
+
+  info(message) {
+    this.#write("INFO", message);
+  }
+
+  warn(message) {
+    this.#write("WARN", message);
+  }
+
+  error(message) {
+    this.#write("ERROR", message);
+  }
 }
 
 // Export a single shared instance so all files use the same log file.
@@ -88,7 +116,7 @@ appear.
 
 ---
 
-## 2. The `Config` Class
+## 2. The `Config` Class ✅ COMPLETED
 
 ### What it is and why you need it
 The app reads `process.env.DB_HOST`, `process.env.PORT`, etc. directly in
@@ -106,7 +134,7 @@ named properties.
 ### Where to put it
 Create the file at `Utils/Config.mjs`.
 
-### What to implement
+### What was implemented
 
 ```js
 // Utils/Config.mjs
@@ -121,28 +149,35 @@ export default class Config {
   }
 
   constructor() {
-    // TODO: assign every env variable the app needs to a public property.
-    //       Required variables should throw if they are missing.
-    //       Optional ones should fall back to a sensible default.
-    //
-    //   this.port           = Number(process.env.PORT)             // required
-    //   this.dbHost         = process.env.DB_HOST                  // required
-    //   this.dbPort         = Number(process.env.DB_PORT)          // required
-    //   this.dbUser         = process.env.DB_USER                  // required
-    //   this.dbPassword     = process.env.DB_PASSWORD              // required
-    //   this.dbName         = process.env.DB_NAME                  // required
-    //   this.dbConnLimit    = Number(process.env.DB_CONNECTION_LIMIT ?? "10")
-    //   this.dbQueueLimit   = Number(process.env.DB_QUEUE_LIMIT    ?? "0")
-    //   this.logLevel       = process.env.LOG_LEVEL                ?? "INFO"
+    this.port = Number(process.env.PORT);
+    this.dbHost = process.env.DB_HOST;
+    this.dbPort = Number(process.env.DB_PORT);
+    this.dbUser = process.env.DB_USER;
+    this.dbPassword = process.env.DB_PASSWORD;
+    this.dbName = process.env.DB_NAME;
+    this.dbConnLimit = Number(process.env.DB_CONNECTION_LIMIT ?? "10");
+    this.dbQueueLimit = Number(process.env.DB_QUEUE_LIMIT ?? "0");
+    this.logLevel = process.env.LOG_LEVEL ?? "INFO";
 
-    // TODO: call this.#validate() at the end of the constructor.
+    this.#validate();
   }
 
-  // TODO: implement #validate().
-  // Loop over the required fields and throw a descriptive error for any
-  // that are undefined or NaN.
-  // Example error: "Missing required config: DB_HOST"
-  #validate() {}
+  #validate() {
+    const required = [
+      ["PORT", this.port],
+      ["DB_HOST", this.dbHost],
+      ["DB_PORT", this.dbPort],
+      ["DB_USER", this.dbUser],
+      ["DB_PASSWORD", this.dbPassword],
+      ["DB_NAME", this.dbName],
+    ];
+
+    const missing = required.filter(([, value]) => value === undefined || value === null || Number.isNaN(value));
+    if (missing.length) {
+      const keys = missing.map(([key]) => key).join(", ");
+      throw new Error(`Missing required config: ${keys}`);
+    }
+  }
 }
 ```
 
@@ -169,7 +204,7 @@ of a cryptic crash deep inside mysql2.
 
 ---
 
-## 3. Implementing `logout()` on the User Subclasses
+## 3. Implementing `logout()` on the User Subclasses ✅ COMPLETED
 
 ### The problem
 The base class `User` defines `static logout()` as an abstract method that
@@ -190,7 +225,7 @@ logout: async (req, res) => {
 The controller is already doing the right work.  Your job is to move the session
 logic into the model so the controller can delegate to it cleanly.
 
-### What to implement
+### What was implemented
 
 In **each** of `Models/Customer.mjs`, `Models/Courrier.mjs`, and
 `Models/RestaurantManager.mjs`, override the static `logout` method:

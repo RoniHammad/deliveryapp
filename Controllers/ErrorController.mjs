@@ -1,6 +1,7 @@
 import fs from "node:fs"; // reads HTML files from disk
 import path from "node:path"; // builds OS-safe file paths
 import { fileURLToPath } from "node:url"; // converts import.meta.url to a file system path
+import { logger } from "../Utils/Logger.mjs";
 
 const __dirName = path.dirname(fileURLToPath(import.meta.url)); // resolves current directory (ESM equivalent of __dirname)
 
@@ -24,7 +25,7 @@ export const errorController = async (statusCode, req, res) => {
     res.writeHead(statusCode, { "Content-Type": "text/html; charset=utf-8" }); // sets status code and HTML content type
     return res.end(html); // sends the HTML body and closes the response
   } catch (error) {
-    console.error(error); // logs the file read failure for debugging
+    logger.error(error); // logs the file read failure for debugging
     res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" }); // fallback header if view file is missing
     return res.end("Internal Server Error"); // guarantees the client always receives a response
   }
